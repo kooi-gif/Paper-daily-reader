@@ -1,0 +1,138 @@
+# paper-daily-reader runtime config (embodied / VLA / WAM / World Models)
+# Paths below are relative to THIS config file's directory.
+# Put a copy at workspace/paper-daily/config.yaml and pass it via --config.
+
+research_profile:
+  language: zh
+  goal: >
+    Find embodied AI and robot learning papers: vision-language-action (VLA),
+    world action models (WAM), world models, manipulation policies, and
+    transferable methods that can inspire robotic foundation-model research.
+  background_topics:
+    - embodied AI
+    - robot learning
+    - vision-language-action
+    - world models
+    - world action models
+    - manipulation policy
+    - imitation learning
+    - reinforcement learning
+    - multimodal learning
+    - representation learning
+    - sim-to-real
+    - dexterous manipulation
+    - mobile manipulation
+  positive_keywords:
+    - vision-language-action
+    - VLA
+    - world model
+    - world action model
+    - WAM
+    - robot policy
+    - manipulation policy
+    - imitation learning
+    - behavior cloning
+    - diffusion policy
+    - action chunking
+    - embodied intelligence
+    - robot foundation model
+    - sim-to-real
+    - dexterous manipulation
+    - mobile manipulation
+    - multi-embodiment
+    - cross-embodiment
+    - visual pretraining
+    - video pretraining
+    - latent action
+    - test-time adaptation
+    - continual learning
+    - foundation model
+    - large language model
+    - vision-language model
+    - multimodal alignment
+    - representation learning
+    - self-supervised learning
+    - contrastive learning
+    - reinforcement learning
+    - model-based RL
+    - planning
+    - navigation
+    - vision-language navigation
+  negative_keywords:
+    - protein folding
+    - materials discovery
+    - recommender system
+    - financial forecasting
+    - web scraper
+    - vulnerability fixing
+    - pure NLP benchmark without robot relevance
+  arxiv_categories:
+    - cs.RO
+    - cs.LG
+    - cs.AI
+    - cs.CV
+    - cs.CL
+    - cs.MM
+    - eess.SY
+    - stat.ML
+  preferred_venues:
+    - RSS
+    - CoRL
+    - ICRA
+    - IROS
+    - NeurIPS
+    - ICML
+    - ICLR
+    - CVPR
+    - ICCV
+    - ECCV
+    - RSS
+    - TRO
+    - RA-L
+    - TMLR
+
+sources:
+  arxiv:
+    enabled: true
+    lookback_days: 3
+    max_results: 200
+    retries: 0
+    retry_after_seconds: 20
+    html_fallback_enabled: true
+    max_api_failures_before_html: 1
+    html_fallback_per_category: 50
+    html_fallback_max_results: 100
+    html_fallback_sleep_seconds: 0.25
+  openreview:
+    enabled: true
+    venues:
+      - ICLR
+      - NeurIPS
+      - ICML
+      - RSS
+      - CoRL
+      - TMLR
+    max_results: 100
+  openalex:
+    enabled: false
+    lookback_days: 3
+    max_results: 100
+    per_page: 50
+    max_auto_queries: 5
+    search_queries: []
+    mailto: ""
+    api_key_env: OPENALEX_API_KEY
+    api_key: ""
+
+output:
+  # relative to config file directory (use workspace/paper-daily/config.yaml)
+  report_dir: reports
+  data_dir: data
+  log_dir: logs
+
+retrieval:
+  candidate_limit: 100
+
+network:
+  preflight_timeout_seconds: 20
+  preflight_retries: 1
